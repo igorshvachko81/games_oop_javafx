@@ -4,7 +4,7 @@ public class Win {
     public static boolean check(int[][] board) {
         boolean result = false;
         for (int i = 0; i < board.length; i++) {
-            if (horizontalCheck(board, i) || verticalCheck(board, i)) {
+            if (board[i][i] == 1 && (horizontalCheck(board, i) || verticalCheck(board, i))) {
                 result = true;
                 break;
             }
