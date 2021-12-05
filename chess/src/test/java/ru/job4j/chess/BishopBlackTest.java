@@ -60,21 +60,24 @@ public class BishopBlackTest {
     }
 
     @Test (expected = ImpossibleMoveException.class)
-    public void exceptionImpossibleMoveExceptionInWay() throws FigureNotFoundException, OccupiedCellException, ImpossibleMoveException {
+    public void exceptionImpossibleMoveExceptionInWay() throws FigureNotFoundException,
+            OccupiedCellException, ImpossibleMoveException {
         Logic field = new Logic();
         field.add(new BishopBlack(Cell.A3));
         field.move(Cell.A3, Cell.D7);
     }
 
     @Test (expected = FigureNotFoundException.class)
-    public void exceptionFigureNotFoundInFindBY() throws FigureNotFoundException, OccupiedCellException, ImpossibleMoveException {
+    public void exceptionFigureNotFoundInFindBY() throws FigureNotFoundException,
+            OccupiedCellException, ImpossibleMoveException {
         Logic field = new Logic();
         field.add(new BishopBlack(Cell.A3));
         field.move(Cell.E2, Cell.E3);
     }
 
     @Test (expected = OccupiedCellException.class)
-    public void exceptionOccupiedCellExceptionInFree() throws FigureNotFoundException, OccupiedCellException, ImpossibleMoveException {
+    public void exceptionOccupiedCellExceptionInFree() throws FigureNotFoundException,
+            OccupiedCellException, ImpossibleMoveException {
         Logic field = new Logic();
         field.add(new BishopBlack(Cell.A3));
         field.add(new PawnBlack(Cell.D6));
