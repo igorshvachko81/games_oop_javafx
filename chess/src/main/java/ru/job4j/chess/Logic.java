@@ -21,6 +21,18 @@ public final class Logic {
     }
 
     private boolean free(Cell[] steps) throws OccupiedCellException {
+        for (Cell cell: steps
+             ) {
+            for (int index = 0; index != figures.length; index++) {
+                if (!(figures[index] == null)) {
+                    if (figures[index].position() == cell) {
+                        throw new OccupiedCellException(
+                                String.format("Position on the way is occupied on cell %s", cell)
+                        );
+                    }
+                }
+            }
+        }
         return true;
     }
 
@@ -36,6 +48,8 @@ public final class Logic {
                 return index;
             }
         }
-        throw new FigureNotFoundException();
+        throw new FigureNotFoundException(
+                String.format("Figure not found on position %s", cell)
+        );
     }
 }
