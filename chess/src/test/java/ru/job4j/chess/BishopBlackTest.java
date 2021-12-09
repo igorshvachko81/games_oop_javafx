@@ -1,10 +1,7 @@
 package ru.job4j.chess;
 
 import org.junit.Assert;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.function.ThrowingRunnable;
-import org.junit.rules.ExpectedException;
 import ru.job4j.chess.firuges.Cell;
 import ru.job4j.chess.firuges.Figure;
 import ru.job4j.chess.firuges.black.BishopBlack;
@@ -83,5 +80,4 @@ public class BishopBlackTest {
         field.add(new PawnBlack(Cell.D6));
         field.move(Cell.A3, Cell.E7);
     }
-
 }
